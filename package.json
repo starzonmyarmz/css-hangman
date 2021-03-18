@@ -3,4 +3,15 @@
   "version": "0.1.0",
   "repository": "git@github.com:starzonmyarmz/css-hangman.git",
   "author": "Daniel Marino <starzonmyarmz@gmail.com>",
+  "scripts": {
+    "server": "http-server -op 1313 ."
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/starzonmyarmz/css-hangman/issues"
+  },
+  "homepage": "https://github.com/starzonmyarmz/css-hangman#readme",
+  "dependencies": {
+    "http-server": "0.12.3"
+  }
 }
