@@ -35,7 +35,7 @@ body {
 }
 
 [data-board] + label {
-  animation: randomBoard 200ms infinite steps(5, jump-none);
+  animation: randomBoard 2000ms infinite steps(5, jump-none);
   display: grid;
   height: 100vh;
   place-items: center;
@@ -72,11 +72,11 @@ body {
   display: block;
 }
 
-[for="game1"] { left: 000vw; background: red; }
-[for="game2"] { left: 100vw; background: blue; }
-[for="game3"] { left: 200vw; background: yellow; }
-[for="game4"] { left: 300vw; background: green; }
-[for="game5"] { left: 400vw; background: purple; }
+[for="game_1"] { left: 000vw; background: red; }
+[for="game_2"] { left: 100vw; background: blue; }
+[for="game_3"] { left: 200vw; background: yellow; }
+[for="game_4"] { left: 300vw; background: green; }
+[for="game_5"] { left: 400vw; background: purple; }
 
 
 
@@ -123,7 +123,7 @@ body {
   width: 1ch
 }
 
-[data-puzzle] > div.sp {
+[data-puzzle] > div[class=" "] {
   border: 0;
 }
 
@@ -164,33 +164,33 @@ input[value="z"]:checked ~ div > .z {
   visibility: hidden;
 }
 
-[data-x]:checked ~ [data-hangman] > :nth-child(1) {
+[data-n]:checked ~ [data-hangman] > :nth-child(1) {
   visibility: visible;
 }
 
-[data-x]:checked ~
-[data-x]:checked ~ [data-hangman] > :nth-child(2) {
+[data-n]:checked ~
+[data-n]:checked ~ [data-hangman] > :nth-child(2) {
   visibility: visible;
 }
 
-[data-x]:checked ~
-[data-x]:checked ~
-[data-x]:checked ~ [data-hangman] > :nth-child(3) {
+[data-n]:checked ~
+[data-n]:checked ~
+[data-n]:checked ~ [data-hangman] > :nth-child(3) {
   visibility: visible;
 }
 
-[data-x]:checked ~
-[data-x]:checked ~
-[data-x]:checked ~
-[data-x]:checked ~ [data-hangman] > :nth-child(4) {
+[data-n]:checked ~
+[data-n]:checked ~
+[data-n]:checked ~
+[data-n]:checked ~ [data-hangman] > :nth-child(4) {
   visibility: visible;
 }
 
-[data-x]:checked ~
-[data-x]:checked ~
-[data-x]:checked ~
-[data-x]:checked ~
-[data-x]:checked ~ [data-hangman] > :nth-child(5) {
+[data-n]:checked ~
+[data-n]:checked ~
+[data-n]:checked ~
+[data-n]:checked ~
+[data-n]:checked ~ [data-hangman] > :nth-child(5) {
   visibility: visible;
 }
 

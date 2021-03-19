@@ -4,8 +4,8 @@
   "repository": "git@github.com:starzonmyarmz/css-hangman.git",
   "author": "Daniel Marino <starzonmyarmz@gmail.com>",
   "scripts": {
-    "build": "./bin/build",
-    "serve": "http-server -op 1313 ."
+    "build": "eleventy",
+    "serve": "eleventy --serve"
   },
   "license": "ISC",
   "bugs": {
@@ -13,7 +13,6 @@
   },
   "homepage": "https://github.com/starzonmyarmz/css-hangman#readme",
   "dependencies": {
-    "html-minifier": "^4.0.0",
-    "http-server": "0.12.3"
+    "@11ty/eleventy": "^0.12.1"
   }
 }
