@@ -4,6 +4,19 @@
     <meta charset="utf-8">
     <title>CSS HANGMAN</title>
     <link rel="stylesheet" href="{{ 'styles.css' | url }}">
+    <style>
+      [data-board] + label {
+        animation-timing-function: steps({{ boards.length }}, jump-none);
+      }
+      @keyframes randomBoard {
+        to {
+          transform: translateX(-{{ boards.length - 1 }}00vw);
+        }
+      }
+      {% for board in boards %}
+        [for="game_{{ loop.index }}"] { left: {{ loop.index - 1 }}00vw; }
+      {% endfor %}
+    </style>
   </head>
   <body>
     <div id="boards">

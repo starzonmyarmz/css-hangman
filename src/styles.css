@@ -35,7 +35,7 @@ body {
 }
 
 [data-board] + label {
-  animation: randomBoard 2000ms infinite steps(5, jump-none);
+  animation: randomBoard 2000ms infinite;
   display: grid;
   height: 100vh;
   place-items: center;
@@ -62,21 +62,9 @@ body {
   z-index: 999;
 }
 
-[data-board]:checked + label {
-  animation-play-state: paused;
-  pointer-events: none;
-  z-index: 999;
-}
-
 [data-board]:checked + label + section {
   display: block;
 }
-
-[for="game_1"] { left: 000vw; background: red; }
-[for="game_2"] { left: 100vw; background: blue; }
-[for="game_3"] { left: 200vw; background: yellow; }
-[for="game_4"] { left: 300vw; background: green; }
-[for="game_5"] { left: 400vw; background: purple; }
 
 
 
@@ -192,14 +180,4 @@ input[value="z"]:checked ~ div > .z {
 [data-n]:checked ~
 [data-n]:checked ~ [data-hangman] > :nth-child(5) {
   visibility: visible;
-}
-
-
-
-/*  Animation  */
-
-@keyframes randomBoard {
-  to {
-    transform: translateX(-400vw);
-  }
 }

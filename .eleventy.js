@@ -20,6 +20,7 @@ module.exports = function(eleventyConfig) {
       let minified = htmlmin.minify(content, {
         collapseInlineTagWhitespace: true,
         collapseWhitespace: true,
+        minifyCSS: true,
         removeComments: true,
         useShortDoctype: true
       })
