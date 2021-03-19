@@ -9,7 +9,7 @@
     <div id="boards">
       <input type="checkbox" id="game1" data-board data-noinput>
       <label for="game1" style="left: 0;"></label>
-      
+
       <section>
         <input type="checkbox" value="a" id="b1ia" data-letter data-noinput><label for="b1ia" data-label>A</label>
         <input type="checkbox" value="b" id="b1ib" data-letter data-noinput><label for="b1ib" data-label>B</label>
@@ -94,5 +94,10 @@
 
 
     </div>
+
+    <script>
+      const h = location.hash.replace('#', '')
+      if (h !== '') document.getElementById(`game${h}`).checked = true
+    </script>
   </body>
 </html>
