@@ -1,8 +1,7 @@
+const CleanCSS = require("clean-css");
 const htmlmin = require("html-minifier")
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("src/styles.css")
-
   eleventyConfig.addFilter("splitPhrase", (data) => {
     const markup = []
     const phrase = data.split('').forEach((char) => {
@@ -13,6 +12,10 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("is", (data, letter) => {
     return data.includes(letter) ? 'data-y' : 'data-n'
+  })
+
+  eleventyConfig.addFilter("cssmin", function(code) {
+    return new CleanCSS({}).minify(code).styles
   })
 
   eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
