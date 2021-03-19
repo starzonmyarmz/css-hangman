@@ -35,7 +35,8 @@ body {
 }
 
 [data-board] + label {
-  animation: randomBoard 2000ms infinite;
+  animation: randomBoard 250ms infinite;
+  background: #fff;
   display: grid;
   height: 100vh;
   place-items: center;
@@ -74,6 +75,7 @@ body {
   cursor: pointer;
   display: inline-block;
   padding: 5px;
+  text-transform: uppercase;
 }
 
 [data-label]:hover {
@@ -108,10 +110,11 @@ body {
   margin: 0 3px;
   padding-bottom: 5px;
   text-align: center;
-  width: 1ch
+  text-transform: uppercase;
+  width: 1ch;
 }
 
-[data-puzzle] > div[class=" "] {
+[data-puzzle] > div[class=""] {
   border: 0;
 }
 
@@ -149,6 +152,7 @@ input[value="z"]:checked ~ div > .z {
 /*  Hangman  */
 
 [data-hangman] > div {
+  pointer-events: none;
   visibility: hidden;
 }
 
@@ -180,4 +184,12 @@ input[value="z"]:checked ~ div > .z {
 [data-n]:checked ~
 [data-n]:checked ~ [data-hangman] > :nth-child(5) {
   visibility: visible;
+}
+
+[data-n]:checked ~
+[data-n]:checked ~
+[data-n]:checked ~
+[data-n]:checked ~
+[data-n]:checked ~ [data-puzzle] > div {
+  color: black;
 }
