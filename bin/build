@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+mkdir -p dist
+
+html-minifier \
+  --collapse-whitespace \
+  --remove-comments \
+  --remove-attribute-quotes \
+  --remove-optional-tags \
+  --remove-tag-whitespace \
+  index.html > dist/index.html

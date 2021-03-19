@@ -5,6 +5,7 @@
   "author": "Daniel Marino <starzonmyarmz@gmail.com>",
   "scripts": {
     "server": "http-server -op 1313 ."
+    "build": "./bin/build",
   },
   "license": "ISC",
   "bugs": {
@@ -12,6 +13,7 @@
   },
   "homepage": "https://github.com/starzonmyarmz/css-hangman#readme",
   "dependencies": {
-    "http-server": "0.12.3"
+    "html-minifier": "^4.0.0",
+    "http-server": "0.12.3",
   }
 }
