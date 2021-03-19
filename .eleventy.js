@@ -1,3 +1,5 @@
+const htmlmin = require("html-minifier")
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/styles.css")
 
@@ -11,6 +13,19 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("is", (data, letter) => {
     return data.includes(letter) ? 'data-y' : 'data-n'
+  })
+
+  eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
+    if (outputPath.endsWith(".html")) {
+      let minified = htmlmin.minify(content, {
+        collapseInlineTagWhitespace: true,
+        collapseWhitespace: true,
+        removeComments: true,
+        useShortDoctype: true
+      })
+      return minified
+    }
+    return content
   })
 
   return {

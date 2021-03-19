@@ -9,10 +9,5 @@
     <div id="boards">
       {{ content | safe }}
     </div>
-
-    <script>
-      const h = location.hash.replace('#', '')
-      if (h !== '') document.getElementById(`game${h}`).checked = true
-    </script>
   </body>
 </html>

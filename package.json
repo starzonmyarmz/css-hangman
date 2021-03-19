@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/starzonmyarmz/css-hangman#readme",
   "dependencies": {
-    "@11ty/eleventy": "^0.12.1"
+    "@11ty/eleventy": "^0.12.1",
+    "html-minifier": "^4.0.0"
   }
 }
