@@ -4,8 +4,8 @@
   "repository": "git@github.com:starzonmyarmz/css-hangman.git",
   "author": "Daniel Marino <starzonmyarmz@gmail.com>",
   "scripts": {
-    "server": "http-server -op 1313 ."
     "build": "./bin/build",
+    "serve": "http-server -op 1313 ."
   },
   "license": "ISC",
   "bugs": {
