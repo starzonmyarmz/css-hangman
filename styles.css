@@ -35,9 +35,12 @@ body {
 }
 
 [data-board] + label {
-  animation: randomBoard 1.67s infinite steps(5, jump-none);
-  position: absolute;
+  animation: randomBoard 200ms infinite steps(5, jump-none);
+  display: grid;
   height: 100vh;
+  place-items: center;
+  position: absolute;
+  text-align: center;
   width: 100vw;
 }
 
@@ -59,9 +62,21 @@ body {
   z-index: 999;
 }
 
+[data-board]:checked + label {
+  animation-play-state: paused;
+  pointer-events: none;
+  z-index: 999;
+}
+
 [data-board]:checked + label + section {
   display: block;
 }
+
+[for="game1"] { left: 000vw; background: red; }
+[for="game2"] { left: 100vw; background: blue; }
+[for="game3"] { left: 200vw; background: yellow; }
+[for="game4"] { left: 300vw; background: green; }
+[for="game5"] { left: 400vw; background: purple; }
 
 
 
