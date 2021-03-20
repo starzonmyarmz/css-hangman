@@ -35,7 +35,7 @@ body {
 }
 
 [data-board] + label {
-  animation: randomBoard 250ms infinite;
+  animation: randomBoard 150ms infinite;
   background: #fff;
   display: grid;
   height: 100vh;
