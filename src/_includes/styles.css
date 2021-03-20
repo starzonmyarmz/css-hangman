@@ -193,3 +193,10 @@ body {
 [data-n]:checked ~ [data-puzzle] > div {
   color: black;
 }
+
+
+/*  Winner  */
+
+[data-winner] {
+  display: none;
+}

@@ -33,5 +33,20 @@ layout: layouts/base.njk
         <p>To play again, please refresh your browser window</p>
       </div>
     </div>
+
+    <style>
+      {% for letter in letters %}
+        {% if board.phrase | is(letter) %}
+          #b{{ boardLoop.index }}i{{ letter }}[data-y]:checked ~
+        {% endif %}
+      {% endfor %}
+        [data-winner] {
+          display: block;
+        }
+    </style>
+
+    <div data-winner>
+      <h2>You win!</h2>
+    </div>
   </section>
 {% endfor %}
