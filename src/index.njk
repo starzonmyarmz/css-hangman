@@ -5,8 +5,8 @@ layout: layouts/base.njk
 {% for board in boards %}
   {% set boardLoop = loop %}
 
-  <input type="checkbox" id="game_{{ boardLoop.index }}" data-board data-noinput>
-  <label for="game_{{ boardLoop.index }}">
+  <input type="checkbox" id="g{{ boardLoop.index }}" data-board data-noinput>
+  <label for="g{{ boardLoop.index }}">
     <div>
       <h1>Hangman</h1>
       Click anywhere to begin!
@@ -37,7 +37,7 @@ layout: layouts/base.njk
     <style>
       {% for letter in letters %}
         {% if board.phrase | is(letter) %}
-          #b{{ boardLoop.index }}i{{ letter }}[data-y]:checked ~
+          [data-y]:checked ~
         {% endif %}
       {% endfor %}
         [data-winner] {
@@ -47,6 +47,7 @@ layout: layouts/base.njk
 
     <div data-winner>
       <h2>You win!</h2>
+      <p>To play again, please refresh your browser window</p>
     </div>
   </section>
 {% endfor %}
