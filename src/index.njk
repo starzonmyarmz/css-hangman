@@ -3,8 +3,10 @@ layout: layouts/base.njk
 ---
 
 {% for board in boards %}
-  <input type="checkbox" id="game_{{ loop.index }}" data-board data-noinput>
-  <label for="game_{{ loop.index }}">
+  {% set boardLoop = loop %}
+
+  <input type="checkbox" id="game_{{ boardLoop.index }}" data-board data-noinput>
+  <label for="game_{{ boardLoop.index }}">
     <div>
       <h1>Hangman</h1>
       Click anywhere to begin!
@@ -12,32 +14,10 @@ layout: layouts/base.njk
   </label>
 
   <section>
-    <input type="checkbox" value="a" id="b{{ loop.index }}ia" data-letter data-noinput {{ board.phrase | is('a') }}><label for="b{{ loop.index }}ia" data-label>a</label>
-    <input type="checkbox" value="b" id="b{{ loop.index }}ib" data-letter data-noinput {{ board.phrase | is('b') }}><label for="b{{ loop.index }}ib" data-label>b</label>
-    <input type="checkbox" value="c" id="b{{ loop.index }}ic" data-letter data-noinput {{ board.phrase | is('c') }}><label for="b{{ loop.index }}ic" data-label>c</label>
-    <input type="checkbox" value="d" id="b{{ loop.index }}id" data-letter data-noinput {{ board.phrase | is('d') }}><label for="b{{ loop.index }}id" data-label>d</label>
-    <input type="checkbox" value="e" id="b{{ loop.index }}ie" data-letter data-noinput {{ board.phrase | is('e') }}><label for="b{{ loop.index }}ie" data-label>e</label>
-    <input type="checkbox" value="f" id="b{{ loop.index }}if" data-letter data-noinput {{ board.phrase | is('f') }}><label for="b{{ loop.index }}if" data-label>f</label>
-    <input type="checkbox" value="g" id="b{{ loop.index }}ig" data-letter data-noinput {{ board.phrase | is('g') }}><label for="b{{ loop.index }}ig" data-label>g</label>
-    <input type="checkbox" value="h" id="b{{ loop.index }}ih" data-letter data-noinput {{ board.phrase | is('h') }}><label for="b{{ loop.index }}ih" data-label>h</label>
-    <input type="checkbox" value="i" id="b{{ loop.index }}ii" data-letter data-noinput {{ board.phrase | is('i') }}><label for="b{{ loop.index }}ii" data-label>i</label>
-    <input type="checkbox" value="j" id="b{{ loop.index }}ij" data-letter data-noinput {{ board.phrase | is('j') }}><label for="b{{ loop.index }}ij" data-label>j</label>
-    <input type="checkbox" value="k" id="b{{ loop.index }}ik" data-letter data-noinput {{ board.phrase | is('k') }}><label for="b{{ loop.index }}ik" data-label>k</label>
-    <input type="checkbox" value="l" id="b{{ loop.index }}il" data-letter data-noinput {{ board.phrase | is('l') }}><label for="b{{ loop.index }}il" data-label>l</label>
-    <input type="checkbox" value="m" id="b{{ loop.index }}im" data-letter data-noinput {{ board.phrase | is('m') }}><label for="b{{ loop.index }}im" data-label>m</label>
-    <input type="checkbox" value="n" id="b{{ loop.index }}in" data-letter data-noinput {{ board.phrase | is('n') }}><label for="b{{ loop.index }}in" data-label>n</label>
-    <input type="checkbox" value="o" id="b{{ loop.index }}io" data-letter data-noinput {{ board.phrase | is('o') }}><label for="b{{ loop.index }}io" data-label>o</label>
-    <input type="checkbox" value="p" id="b{{ loop.index }}ip" data-letter data-noinput {{ board.phrase | is('p') }}><label for="b{{ loop.index }}ip" data-label>p</label>
-    <input type="checkbox" value="q" id="b{{ loop.index }}iq" data-letter data-noinput {{ board.phrase | is('q') }}><label for="b{{ loop.index }}iq" data-label>q</label>
-    <input type="checkbox" value="r" id="b{{ loop.index }}ir" data-letter data-noinput {{ board.phrase | is('r') }}><label for="b{{ loop.index }}ir" data-label>r</label>
-    <input type="checkbox" value="s" id="b{{ loop.index }}is" data-letter data-noinput {{ board.phrase | is('s') }}><label for="b{{ loop.index }}is" data-label>s</label>
-    <input type="checkbox" value="t" id="b{{ loop.index }}it" data-letter data-noinput {{ board.phrase | is('t') }}><label for="b{{ loop.index }}it" data-label>t</label>
-    <input type="checkbox" value="u" id="b{{ loop.index }}iu" data-letter data-noinput {{ board.phrase | is('u') }}><label for="b{{ loop.index }}iu" data-label>u</label>
-    <input type="checkbox" value="v" id="b{{ loop.index }}iv" data-letter data-noinput {{ board.phrase | is('v') }}><label for="b{{ loop.index }}iv" data-label>v</label>
-    <input type="checkbox" value="w" id="b{{ loop.index }}iw" data-letter data-noinput {{ board.phrase | is('w') }}><label for="b{{ loop.index }}iw" data-label>w</label>
-    <input type="checkbox" value="x" id="b{{ loop.index }}ix" data-letter data-noinput {{ board.phrase | is('x') }}><label for="b{{ loop.index }}ix" data-label>x</label>
-    <input type="checkbox" value="y" id="b{{ loop.index }}iy" data-letter data-noinput {{ board.phrase | is('y') }}><label for="b{{ loop.index }}iy" data-label>y</label>
-    <input type="checkbox" value="z" id="b{{ loop.index }}iz" data-letter data-noinput {{ board.phrase | is('z') }}><label for="b{{ loop.index }}iz" data-label>z</label>
+    {% for letter in letters %}
+      <input type="checkbox" value="{{ letter }}" id="b{{ boardLoop.index }}i{{ letter }}" data-letter data-noinput data-{% if board.phrase | is(letter) %}y{% else %}n{% endif %}>
+      <label for="b{{ boardLoop.index }}i{{ letter }}" data-label>{{ letter }}</label>
+    {% endfor %}
 
     <div data-puzzle>
       {{ board.phrase | splitPhrase | safe}}

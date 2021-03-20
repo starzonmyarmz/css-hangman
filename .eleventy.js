@@ -11,7 +11,7 @@ module.exports = function(eleventyConfig) {
   })
 
   eleventyConfig.addFilter("is", (data, letter) => {
-    return data.includes(letter) ? 'data-y' : 'data-n'
+    return data.includes(letter)
   })
 
   eleventyConfig.addFilter("cssmin", function(code) {
