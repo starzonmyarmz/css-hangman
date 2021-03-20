@@ -37,11 +37,13 @@ layout: layouts/base.njk
     <style>
       {% for letter in letters %}
         {% if board.phrase | is(letter) %}
-          [data-y]:checked ~
+          #b{{ boardLoop.index }}i{{ letter }}[data-y]:checked ~
         {% endif %}
       {% endfor %}
         [data-winner] {
-          display: block;
+          animation: fadeIn 2s 0.5s 1 forwards;
+          opacity: 0;
+          visibility: visible;
         }
     </style>
 
